@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GeoMap</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="geomap.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+
+    }
+
+
+
+
+
+    .mySlides {
+      position: relative;
+      display: none;
+      max-height: 550px;
+
+
+    }
+
+
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+
+      width: auto;
+      padding: 16px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      bottom: 215px;
+      left: 250px;
+    }
+
+    .prev {
+      left: 250px;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      left: 660px;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text2 {
+      color: white;
+      font-size: 30px;
+      padding: 8px 12px;
+      position: relative;
+      width: 100%;
+
+      text-align: center;
+
+      bottom: -10px;
+      font-size: 0px;
+      transition: 0.1s;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      position: relative;
+      background-color: yellowgreen;
+      border-radius: 50%;
+      bottom: 50px;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #09471c;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text2 {
+        font-size: 11px
+      }
+    }
+
+    .textcontainer {
+      width: 500px;
+      height: 75px;
+      background-color: black;
+      position: relative;
+      display: flex;
+      bottom: 250px;
+      opacity: 0.2;
+
+    }
+
+    .text2 {
+      color: white;
+      opacity: 1.0;
+    }
+
+    .textcontainer:hover {
+      opacity: 0.8;
+    }
+
+    .textcontainer:hover .text2 {
+      bottom: -10px;
+      transition: 0.75s;
+      display: inline-block;
+      font-size: 30px;
+
+    }
+  </style>
+</head>
+
+
+
+<!-- <div class="scrolldown">
+
+
+    <div class="arrow-down">
+
+
+      <div class="left"></div>
+      <div class="right"></div>
+
+    </div>
+  </div>
+ -->
+
+<body>
+  <br><br><br><br>
+  <div id="imageholder">
+    <img src="./peoplesmoney.png" alt="people's money placeholder"></img>
+    <br><br>
+
+  </div>
+
+  <div id="descriptionholder">
+    <section id="descriptionholdersection">
+      <h1>
+        The People's Money (2023-2024)
+      </h1>
+      <h2>
+        The People’s Money Initiative is a citywide participatory budgeting process run by the NYC Civic Engagement
+        Commission. Until June 12, 2024, New York City residents ages 11 and older, regardless of immigration status,
+        could vote on how to spend a portion of the city budget to address community needs. Each resident voted on
+        projects that were specific to their borough.
+
+      </h2>
+      <h2>Voting has now concluded, and budget ideas are in process of evaluation.
+      </h2>
+      <h2>Scroll down to engage with submitted ideas and learn about borough-specific trends.</h2>
+    </section>
+
+
+  </div>
+
+
+  <!-- NEW APPROACH -->
+
+  <br><br><br><br><br><br>
+  <div id="citynumbers">
+
+    <h1>1944 total ideas submitted in New York City. . .</h1>
+
+  </div>
+  <br><br>
+
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-user"></i></p>
+        <h3>277</h3>
+        <p>Manhattan</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-check"></i></p>
+        <h3>457</h3>
+        <p>Queens</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-smile-o"></i></p>
+        <h3>153</h3>
+        <p>Staten Island</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-coffee"></i></p>
+        <h3>440</h3>
+        <p>The Bronx</p>
+      </div>
+    </div>
+
+
+    <div class="column">
+      <div class="card">
+        <p><i class="fa fa-coffee"></i></p>
+        <h3>617</h3>
+        <p>Brooklyn</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- NEW APPROACH END -->
+
+
+  <!-- NEW APPROACH -->
+
+  <br><br><br><br><br><br>
+  <div id="citynumbers">
+    <h1>. . . across 8 different impact areas</h1>
+
+  </div>
+
+  <br><br>
+
+  <div class="row">
+    <div class="columnimpact">
+      <div class="card">
+        <p><i class="fa fa-user"></i></p>
+        <h3>374</h3>
+        <p>Social Services and Accessibility</p>
+      </div>
+    </div>
+
+    <div class="columnimpact">
+      <div class="card">
+        <p><i class="fa fa-check"></i></p>
+        <h3>359</h3>
+        <p>Education</p>
+      </div>
+    </div>
+
+    <div class="columnimpact">
+      <div class="card">
+        <p><i class="fa fa-smile-o"></i></p>
+        <h3>292</h3>
+        <p>Health and Wellbeing</p>
+      </div>
+    </div>
+
+    <div class="columnimpact">
+      <div class="card">
+        <p><i class="fa fa-coffee"></i></p>
+        <h3>186</h3>
+        <p>Public Safety</p>
+      </div>
+    </div>
+
+
+    <div class="columnimpact">
+      <div class="card">
+        <p><i class="fa fa-coffee"></i></p>
+        <h3>185</h3>
+        <p>Environment and Public Space</p>
+      </div>
+    </div>
+
+    <div class="columnimpact">
+      <div class="card">
+        <p><i class="fa fa-coffee"></i></p>
+        <h3>154</h3>
+        <p>Arts and Culture</p>
+      </div>
+    </div>
+
+    <div class="columnimpact">
+      <div class="card">
+        <p><i class="fa fa-coffee"></i></p>
+        <h3>123</h3>
+        <p>Civic Engagement</p>
+      </div>
+    </div>
+
+
+    <div class="columnimpact">
+      <div class="card">
+        <p><i class="fa fa-coffee"></i></p>
+        <h3>109</h3>
+        <p>Workforce Development</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- NEW APPROACH END -->
+
+
+  <br><br><br><br><br><br><br><br>
+
+  <div id="mapdescription">
+
+    <nexttitle><strong>Your Ideas, On a Map</strong></nexttitle>
+    <horizontalline></horizontalline>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <stats>
+  <box1>
+    <ideastatistic id="idea">
+      <nycnum></nycnum>
+      <bronxnum></bronxnum>
+      <brooklynnum></brooklynnum>
+      <manhattannum></manhattannum>
+      <queensnum></queensnum>
+      <statenislandnum></statenislandnum>
+
+    </ideastatistic>
+    <ideastext> ideas submitted in </ideastext>
+    <div style="background-color:white;">
+
+      <div class="dropdown">
+        <button type="button" onclick="myFunction(); change()" class="dropbtn" value="nyc" id="nyc">NYC</button>
+        <div id="myDropdown" class="dropdown-content">
+
+          <button type="button" onclick="change()" class="dropdown-button" value="CHANGE" id="bronx">the
+            Bronx</button>
+          <button type="button" onclick="change()" class="dropdown-button" value="CHANGE">Brooklyn</button>
+          <button type="button" onclick="change()" class="dropdown-button" value="CHANGE">Manhattan</button>
+          <button type="button" onclick="change()" class="dropdown-button" value="CHANGE">Queens</button>
+          <button type="button" onclick="change()" class="dropdown-button" value="CHANGE">Staten Island</button>
+
+        </div>
+      </div>
+    </div>
+
+  </box1>
+  <box2>
+  </box2>
+  <box3>
+
+  </box3>
+</stats> -->
+
+
+
+
+
+
+
+    <map>
+      <iframe src="present_map.html" title="geomap" class="geomap"></iframe>
+    </map>
+
+
+
+    <br><br><br><br><br><br>
+    <div class="sentiments">
+      <sentiment>Wordcloud Creation</sentiment>
+      <div class="anotherline"></div>
+      <br><br>
+
+      <sentimentstext>The following wordclouds display the most popular words used when submitting ideas, separated by
+        boroughs. The
+        larger the word, the more frequently it was used.</sentimentstext>
+
+      <br><br>
+    </div>
+    <br><br><br><br><br>
+    <h2> Click to enlarge images</h2>
+    <br><br>
+
+
+    <div class="rowimagee">
+      <div class="columnimagee">
+        <img src="manhattan.png" onclick="change(this)" id="wordcloudimage" width="auto" height="auto">
+        <boroughtext>Manhattan</boroughtext>
+      </div>
+
+      <div class="columnimagee">
+        <img src="brooklyn.png" onclick="change(this)" id="wordcloudimage" width="auto" height="auto">
+        <boroughtext>Brooklyn</boroughtext>
+      </div>
+
+      <div class="columnimagee">
+        <img src="queens.png" onclick="change(this)" id="wordcloudimage" width="auto" height="auto">
+        <boroughtext>Queens</boroughtext>
+      </div>
+      <div class="columnimagee">
+        <img src="statenisland.png" onclick="change(this)" id="wordcloudimage" width="auto" height="auto">
+        <boroughtext>Staten Island</boroughtext>
+
+      </div>
+
+      <div class="columnimagee">
+        <img src="bronx.png" onclick="change(this)" id="wordcloudimage" width="auto" height="auto">
+        <boroughtext>Bronx</boroughtext>
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <br><br><br><br>
+    <div>Created in collaboration with the Milstein Program in Technology and Humanity at Cornell University</div>
+    <br><br>
+</body>
